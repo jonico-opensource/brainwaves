@@ -35,6 +35,10 @@ if [ -n "$PLANETSCALE_SERVICE_TOKEN_NAME" ]; then
   pscale service-token add-access "$PLANETSCALE_SERVICE_TOKEN_NAME" approve_deploy_request connect_branch create_branch create_comment create_deploy_request delete_branch read_branch read_deploy_request connect_production_branch  --database "$DB_NAME" --org "$ORG_NAME"
 fi
 
+# sleep another 30 seconds to avoid race conditions on password creation
+
+sleep 30
+
 . create-branch-connection-string.sh
 
 create-branch-connection-string  "$DB_NAME" "$BRANCH_NAME" "$ORG_NAME" "creds-${BRANCH_NAME}" "share"
