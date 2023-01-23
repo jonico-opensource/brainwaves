@@ -1,6 +1,6 @@
 
 # Set DB_NAME unless it is already set
-export DB_NAME=${DB_NAME:-harry-potter-${GITHUB_USER:-db}}
+export DB_NAME=${DB_NAME:-harry-potter-db-${GITHUB_USER:-db}}
 echo "Using DB name ${DB_NAME}"
 
 # set org name to first org the user has access to unless it is already set in ORG_NAME
