@@ -29,7 +29,7 @@ const loadAndSaveData = async () => {
 
         
 		//load raw data from api
-		const {data} = await axios.get('http://hp-api.herokuapp.com/api/characters');
+		const {data} = await axios.get('https://hp-api.onrender.com/api/characters');
         
 		//save the wands
 		const wands = getWandDataToSave(data);
