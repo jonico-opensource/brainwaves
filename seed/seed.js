@@ -69,6 +69,7 @@ const getWandDataToSave = (data) => {
 
 const getCharacterDataToSave = (data) =>{
 	const formattedCharacters = data.map((character, i) => {
+		delete character['id'];
 		delete character['alternate_names'];
 		delete character['alternate_actors'];
 		delete character['actor'];
